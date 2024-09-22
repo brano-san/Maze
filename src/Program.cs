@@ -53,18 +53,6 @@
             }
         }
 
-        private static void DrawPlayer(int x, int y)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write('@');
-        }
-
-        private static void ClearPlayer(int x, int y)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(' ');
-        }
-
         private static void MovePlayer(ConsoleKeyInfo keyInfo)
         {
             var newX = playerX;
@@ -93,10 +81,27 @@
                 return;
             }
 
+            MovePlayer(newX, newY);
+        }
+
+        private static void MovePlayer(int newX, int newY)
+        {
             ClearPlayer(playerX, playerY);
             playerX = newX;
             playerY = newY;
             DrawPlayer(playerX, playerY);
+        }
+
+        private static void DrawPlayer(int x, int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write('@');
+        }
+
+        private static void ClearPlayer(int x, int y)
+        {
+            Console.SetCursorPosition(x, y);
+            Console.Write(' ');
         }
     }
 
