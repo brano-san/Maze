@@ -72,8 +72,6 @@
                 case ConsoleKey.RightArrow:
                     newX++;
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
 
             if (maze[newY, newX] != ' ')
